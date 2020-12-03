@@ -9,8 +9,10 @@ const port = process.env.port || 5000;
 const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-app.get("/", MainRouter.getMain);
+
+app.use("/", MainRouter);
 app.get("/user", UserRouter.getUser);
+
 app.listen(port, () => {
   console.log(`I'm listening on port ${port}`);
 });
