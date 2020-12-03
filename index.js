@@ -11,7 +11,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use("/", MainRouter);
-app.get("/user", UserRouter.getUser);
+app.use("/user", UserRouter);
 
 app.listen(port, () => {
   console.log(`I'm listening on port ${port}`);
